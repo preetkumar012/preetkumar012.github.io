@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saurabh Kumar - Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body {
+    margin: 0;
+    background: #e9ecef;
+    font-family: 'Inter', 'Segoe UI', Calibri, Roboto, Arial, sans-serif;
+    color: #111;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .toolbar { text-align: center; padding: 14px 10px 4px; }
+  .toolbar button {
+    background: #1f4e79; color: #fff; border: 0; border-radius: 6px;
+    padding: 10px 22px; font-size: 15px; cursor: pointer; font-family: inherit;
+  }
+  .toolbar button:hover { background: #163a5a; }
+  .toolbar p { font-size: 12px; color: #444; margin: 6px 0 0; }
+
+  .page {
+    width: 210mm; min-height: 297mm; max-width: 100%;
+    margin: 14px auto; background: #fff; color: #000;
+    padding: 16mm 18mm;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  }
+  h1 { font-size: 25pt; font-weight: 700; margin: 0; letter-spacing: .3px; color: #111; }
+  .contact { margin: 8px 0 0; font-size: 10pt; color: #222; line-height: 1.6; }
+  .contact span { display: block; }
+  h2 {
+    font-size: 10.5pt; font-weight: 600; text-transform: uppercase; letter-spacing: 1.4px;
+    color: #1f4e79; border-bottom: 1px solid #1f4e79;
+    padding-bottom: 2px; margin: 20px 0 8px;
+  }
+  .row { display: flex; justify-content: space-between; gap: 12px; }
+  .job-title { font-weight: 600; font-size: 11pt; margin: 0; }
+  .meta { margin: 2px 0 6px; font-size: 10pt; color: #333; }
+  ul { margin: 4px 0 0; padding-left: 18px; }
+  li { margin-bottom: 5px; }
+  .skills { columns: 2; column-gap: 30px; }
+  .skills li { break-inside: avoid; }
+  .edu li { margin-bottom: 5px; }
+  p { margin: 0 0 4px; }
+
+  @media (max-width: 700px) {
+    .page { padding: 14px; min-height: 0; }
+    .skills { columns: 1; }
+  }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none; }
+    .page { margin: 0; box-shadow: none; width: 210mm; height: 297mm; min-height: 0; padding: 16mm 18mm; overflow: hidden; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Download PDF / Print</button>
+  <p>In the print window, choose "Save as PDF" as the destination. Set Margins to "None" and turn off "Headers and footers".</p>
+</div>
+
+<div class="page" id="resume">
+  <h1>Saurabh Kumar</h1>
+  <div class="contact">
+    <span>Father's Name: Rustam Kumar</span>
+    <span>Address: Village Dhanouri, Dankaur, District Gautam Buddha Nagar, Uttar Pradesh, India.</span>
+    <span>Phone: 9286049277</span>
+    <span>Email: saurabh44441@gmail.com</span>
+     <!-- <span>Date of Birth: 07/06/2007</span> -->
+  </div>
+
+  <h2>Professional Summary</h2>
+  <p>Candidate with 6 months of experience in a property broker's office in Gaur City, Greater Noida, currently pursuing a Bachelor of Science degree. Interested in real estate rental and sales support roles. Polite, hardworking, and willing to learn.</p>
+
+  <h2>Work Experience</h2>
+  <p class="job-title">Real Estate Office Assistant / Property Rental &amp; Sales Support</p>
+  <p class="meta">Property Broker Office, Gaur City, Greater Noida &nbsp;|&nbsp; Duration: 6 Months</p>
+  <ul>
+    <li>Replied to customer calls and WhatsApp inquiries for flats on rent and sale.</li>
+    <li>Took customers for flat visits in the society.</li>
+    <li>Helped fix meetings between customers and property owners.</li>
+    <li>Followed up with customers after site visits.</li>
+  </ul>
+
+  <h2>Education</h2>
+<ul class="edu">
+  <li>
+    <strong>Bachelor of Science (B.Sc.)</strong>
+    <span>Currently Pursuing – 2nd Year</span>
+  </li>
+  <li>
+    <strong>Senior Secondary (Class 12th)</strong>
+    <span>Completed in 2025</span>
+  </li>
+  <li>
+    <strong>Secondary School (Class 10th)</strong>
+    <span>Completed in 2023</span>
+  </li>
+</ul>
+
+   <h2>Key Skills</h2>
+  <ul class="skills">
+    <li>Polite Customer Communication</li>
+    <li>Phone Calls & WhatsApp Follow-up</li>
+    <li>Local Area Knowledge (Dankaur / Greater Noida)</li>
+    <li>Basic Mobile & Computer Use</li>
+    <li>Punctuality & Discipline</li>
+    <li>Quick Learner</li>
+    <li>Teamwork</li>
+    <li>Willingness to Travel for Site Visits</li>
+  </ul>
+
+  <h2>Declaration</h2>
+  <p>I confirm that the information given above is true to the best of my knowledge.</p>
+</div>
+
+</body>
+</html> 
+
+
+

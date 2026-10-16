@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preet Kumar — Full Stack Software Engineer | Portfolio &amp; CV</title>
+<meta name="description" content="Preet Kumar - Full Stack Software Engineer with 3 years of experience building scalable web apps with React.js, Next.js, Node.js and NestJS.">
+<meta name="author" content="Preet Kumar">
+<meta property="og:title" content="Preet Kumar — Full Stack Software Engineer">
+<meta property="og:description" content="Portfolio &amp; CV of Preet Kumar. Specializing in React.js, Next.js, Node.js, NestJS, and real-time web applications.">
+<meta property="og:url" content="https://preetkumar012.github.io/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa;
+  --card:#ffffff;
+  --text:#18181b;
+  --muted:#52525b;
+  --line:#e4e4e7;
+  --accent:#4f46e5;
+  --accent2:#0891b2;
+  --accent-glow:rgba(79,70,229,0.15);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#09090b;
+    --card:#131316;
+    --text:#f4f4f5;
+    --muted:#a1a1aa;
+    --line:#27272a;
+    --accent:#818cf8;
+    --accent2:#22d3ee;
+    --accent-glow:rgba(129,140,248,0.2)
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#09090b;
+  --card:#131316;
+  --text:#f4f4f5;
+  --muted:#a1a1aa;
+  --line:#27272a;
+  --accent:#818cf8;
+  --accent2:#22d3ee;
+  --accent-glow:rgba(129,140,248,0.2)
+}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility
+}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+nav{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:100;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:border-color .2s ease
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0 0 auto;
+  height:env(safe-area-inset-top,0px);
+  z-index:90;
+  background:var(--bg)
+}
+.nav{
+  max-width:1050px;
+  margin:auto;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px
+}
+.logo{
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:-0.5px;
+  color:var(--accent);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 0
+}
+.logo span{
+  color:var(--text);
+  font-weight:600;
+  font-size:14px;
+  display:none
+}
+@media(min-width:640px){
+  .logo span{display:inline}
+}
+.nav-center{
+  display:flex;
+  align-items:center;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-center::-webkit-scrollbar{display:none}
+.links{
+  display:flex;
+  gap:4px;
+  font-size:13.5px;
+  color:var(--muted);
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.links a{
+  padding:7px 12px;
+  border-radius:8px;
+  transition:all .2s ease;
+  white-space:nowrap;
+  display:inline-block;
+  font-weight:500
+}
+.links a:hover{
+  color:var(--text);
+  background:color-mix(in srgb,var(--text) 6%,transparent)
+}
+/* Scrollspy active class */
+.links a.active{
+  color:var(--accent);
+  font-weight:700;
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 30%,transparent)
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0
+}
+.btn-nav-cv{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 14px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:600;
+  background:var(--accent);
+  color:#fff !important;
+  border:1px solid transparent;
+  transition:all .2s ease;
+  white-space:nowrap;
+  box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 30%,transparent)
+}
+.btn-nav-cv:hover{
+  opacity:0.92;
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px color-mix(in srgb,var(--accent) 45%,transparent)
+}
+.btn-nav-cv svg{
+  transition:transform .2s ease
+}
+.btn-nav-cv:hover svg{
+  transform:translateY(1px)
+}
+
+/* Layout */
+main{max-width:1050px;margin:auto;padding:0 20px}
+section{padding:75px 0 15px}
+h2{
+  font-size:30px;
+  letter-spacing:-0.6px;
+  margin:0 0 6px;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+.sub{color:var(--muted);margin:0 0 28px;font-size:15px}
+
+/* Hero */
+.hero{padding-top:70px}
+.badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-size:13px;
+  font-weight:500;
+  border:1px solid var(--line);
+  padding:6px 14px;
+  border-radius:99px;
+  color:var(--muted);
+  background:var(--card)
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,0.2);
+  animation:pulse 2s infinite
+}
+@keyframes pulse{
+  0%,100%{opacity:1}
+  50%{opacity:0.4}
+}
+h1{
+  font-size:clamp(38px,7.5vw,64px);
+  line-height:1.08;
+  margin:20px 0 10px;
+  letter-spacing:-1.5px;
+  font-weight:800
+}
+.grad{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent
+}
+.role{
+  font-size:20px;
+  color:var(--muted);
+  margin:0 0 16px;
+  font-weight:500
+}
+.lead{
+  max-width:680px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.65;
+  margin:0 0 24px
+}
+.btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:28px 0
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 20px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  font-weight:600;
+  font-size:14.5px;
+  background:var(--card);
+  color:var(--text);
+  cursor:pointer;
+  transition:all .18s ease;
+  user-select:none
+}
+.btn:hover{
+  border-color:color-mix(in srgb,var(--text) 25%,var(--line));
+  transform:translateY(-1px)
+}
+.btn.p{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+  box-shadow:0 3px 12px color-mix(in srgb,var(--accent) 30%,transparent)
+}
+.btn.p:hover{
+  opacity:0.93;
+  box-shadow:0 5px 16px color-mix(in srgb,var(--accent) 45%,transparent)
+}
+.btn.cv-highlight{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-color:transparent;
+  color:#fff;
+  box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 35%,transparent)
+}
+.btn.cv-highlight:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px color-mix(in srgb,var(--accent) 50%,transparent)
+}
+
+/* Stats */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+  margin-top:24px
+}
+.stat,.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px;
+  transition:border-color .2s ease,box-shadow .2s ease
+}
+.card:hover{
+  border-color:color-mix(in srgb,var(--accent) 40%,var(--line));
+  box-shadow:0 6px 20px rgba(0,0,0,0.04)
+}
+.stat b{
+  font-size:28px;
+  color:var(--accent);
+  display:block;
+  line-height:1.2;
+  margin-bottom:4px;
+  letter-spacing:-0.5px
+}
+.stat span{
+  color:var(--muted);
+  font-size:13.5px;
+  font-weight:500
+}
+
+/* Code block */
+.code{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:20px 22px;
+  margin-top:28px;
+  font:13.5px/1.7 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  overflow-x:auto;
+  white-space:pre;
+  position:relative
+}
+.k{color:var(--accent);font-weight:600}
+.s{color:var(--accent2)}
+.c{color:var(--muted);font-style:italic}
+
+/* Section content */
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:6px
+}
+.card h3{
+  margin:0;
+  font-size:18px;
+  letter-spacing:-0.3px;
+  font-weight:700
+}
+.meta{
+  color:var(--muted);
+  font-size:13.5px
+}
+ul{
+  padding-left:20px;
+  color:var(--muted);
+  margin:12px 0 0;
+  font-size:14.5px
+}
+li{margin-bottom:7px}
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px
+}
+.tag{
+  font-size:12.5px;
+  font-weight:500;
+  padding:4px 11px;
+  border-radius:99px;
+  background:color-mix(in srgb,var(--accent) 12%,transparent);
+  color:var(--accent);
+  border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px
+}
+.card .tag{
+  background:color-mix(in srgb,var(--text) 4%,transparent);
+  color:var(--text);
+  border-color:var(--line)
+}
+.card a.lnk{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  margin-top:14px;
+  color:var(--accent);
+  font-weight:600;
+  font-size:14px;
+  transition:gap .2s ease
+}
+.card a.lnk:hover{gap:8px}
+
+/* Contact & CV download card */
+.contact{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px
+}
+.contact .card{
+  display:block;
+  color:inherit;
+  cursor:pointer
+}
+.contact small{
+  color:var(--muted);
+  display:block;
+  font-size:12px;
+  margin-bottom:2px;
+  text-transform:uppercase;
+  letter-spacing:0.5px
+}
+.contact-cv-card{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 8%,var(--card)),color-mix(in srgb,var(--accent2) 8%,var(--card)));
+  border-color:color-mix(in srgb,var(--accent) 30%,var(--line));
+  display:flex !important;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  padding:22px
+}
+.contact-cv-card:hover{
+  border-color:var(--accent)
+}
+
+/* Toast */
+.toast{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:var(--card);
+  color:var(--text);
+  border:1px solid var(--accent);
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  box-shadow:0 8px 30px rgba(0,0,0,0.18);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transform:translateY(120px);
+  opacity:0;
+  transition:transform .3s cubic-bezier(0.16, 1, 0.3, 1), opacity .3s ease;
+  z-index:200;
+  pointer-events:none
+}
+.toast.show{
+  transform:translateY(0);
+  opacity:1
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:13.5px;
+  padding:60px 0 40px;
+  border-top:1px solid var(--line);
+  margin-top:60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px
+}
+.footer-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center
+}
+.footer-links a:hover{color:var(--accent)}
+
+@media(max-width:768px){
+  .links a{padding:6px 9px;font-size:13px}
+  .nav{padding:10px 14px}
+  h1{font-size:36px}
+  section{padding:55px 0 10px}
+  .btns .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav">
+    <a class="logo" href="#top" title="Preet Kumar Portfolio">
+      PK. <span>Preet Kumar</span>
+    </a>
+    
+    <div class="nav-center">
+      <div class="links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <a class="btn-nav-cv" href="Preet_Kumar_Resume.pdf" download="Preet_Kumar_Resume.pdf" target="_blank" title="Download Preet Kumar Resume / CV">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Download CV</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <span class="badge"><i class="dot"></i> Open to Opportunities · Noida, India</span>
+      <button class="btn" style="padding:6px 14px;font-size:13px" onclick="copyPortfolioUrl()" title="Copy live portfolio link to share on CV">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>Copy Portfolio URL</span>
+      </button>
+    </div>
+
+    <h1>Hi, I'm <span class="grad">Preet Kumar</span></h1>
+    <p class="role">Software Engineer · Full Stack Developer · React.js · Next.js · Node.js</p>
+    <p class="lead">Software Engineer with 3 years of experience building scalable web applications using React.js, Next.js, Node.js, and NestJS. I deliver production-ready, maintainable solutions in Agile teams.</p>
+    
+    <div class="btns">
+      <a class="btn cv-highlight" href="Preet_Kumar_Resume.pdf" download="Preet_Kumar_Resume.pdf" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <b>Download CV (PDF)</b>
+      </a>
+      <a class="btn" href="Preet_Kumar_Resume.pdf" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        View Resume
+      </a>
+      <a class="btn p" href="#projects">View Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+      <a class="btn" href="https://www.linkedin.com/in/preet-kumar-1b738523a" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>3</b><span>Years Experience</span></div>
+      <div class="stat"><b>3+</b><span>Production Projects</span></div>
+      <div class="stat"><b>Full Stack</b><span>React · Next · NestJS</span></div>
+      <div class="stat"><b>Real-time</b><span>Socket.IO · SSE</span></div>
+    </div>
+
+    <div class="code"><span class="k">const</span> developer = {
+  name: <span class="s">"Preet Kumar"</span>,
+  role: <span class="s">"Full Stack Software Engineer"</span>,
+  location: <span class="s">"Noida, India"</span>,
+  stack: [<span class="s">"React.js"</span>, <span class="s">"Next.js"</span>, <span class="s">"NestJS"</span>, <span class="s">"MongoDB"</span>],
+  focus: <span class="s">"Performance, SEO &amp; Scalable UI"</span>,
+  resume: <span class="s">"Preet_Kumar_Resume.pdf"</span>, <span class="c">// Ready to download</span>
+  status: <span class="s">"Shipping to Production"</span>
+};</div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About</h2>
+    <p class="sub">Who I am and what I do.</p>
+    <div class="card">
+      <p style="margin:0;color:var(--muted);font-size:15.5px;line-height:1.75">
+        I build fast, responsive, and maintainable web applications end-to-end — from reusable React/Next.js interfaces to NestJS REST APIs backed by MongoDB, MySQL, and Redis. I care deeply about performance (SSR, SSG, lazy loading, code splitting, caching), clean state management, and shipping real features alongside cross-functional teams using Git, Bitbucket, and Jira.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">My track record building software in production.</p>
+    <div class="card">
+      <div class="row">
+        <h3>Software Engineer · Khan Global Studies</h3>
+        <span class="meta">July 2023 – Present · Noida, India</span>
+      </div>
+      <ul>
+        <li>Developed and maintained scalable, responsive web applications using React.js, Next.js, Node.js, and NestJS.</li>
+        <li>Designed reusable UI components and applied state management (Redux, Zustand, Context API) to improve maintainability.</li>
+        <li>Optimized performance using SSR, SSG, lazy loading, code splitting, and caching, improving load speed and UX.</li>
+        <li>Collaborated with cross-functional teams in Agile using Git, Bitbucket, and Jira to ship production features.</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">React.js</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">NestJS</span>
+        <span class="tag">Redux</span>
+        <span class="tag">Zustand</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills &amp; Technologies</h2>
+    <p class="sub">Tools I use to build modern web applications.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript (ES6+)</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Frontend</h3>
+        <div class="tags">
+          <span class="tag">React.js</span>
+          <span class="tag">Next.js (SSR/SSG)</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">Context API</span>
+          <span class="tag">TanStack Router</span>
+          <span class="tag">Vite</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>UI Frameworks</h3>
+        <div class="tags">
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">Ant Design</span>
+          <span class="tag">Chakra UI</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Performance &amp; SEO</h3>
+        <div class="tags">
+          <span class="tag">SSR</span>
+          <span class="tag">SSG</span>
+          <span class="tag">Lazy Loading</span>
+          <span class="tag">Code Splitting</span>
+          <span class="tag">Caching</span>
+          <span class="tag">SEO Best Practices</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Backend &amp; Database</h3>
+        <div class="tags">
+          <span class="tag">NestJS</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Real-time &amp; Tools</h3>
+        <div class="tags">
+          <span class="tag">Socket.IO</span>
+          <span class="tag">SSE</span>
+          <span class="tag">Git</span>
+          <span class="tag">Bitbucket</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Postman</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Production applications I've built and maintained.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Bot Sphere</h3>
+        <div class="meta">Full-Stack Conversational Platform</div>
+        <ul>
+          <li>React.js + Vite frontend and NestJS backend APIs for chat, users, bot workflows, and templates.</li>
+          <li>Real-time live messaging and agent-user interaction via Socket.IO and SSE.</li>
+          <li>MongoDB for storage, Redis for caching to speed up data access.</li>
+          <li>WhatsApp Marketing and Utility template messaging.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Vite</span>
+          <span class="tag">React</span>
+          <span class="tag">TanStack Router</span>
+          <span class="tag">Socket.IO</span>
+          <span class="tag">NestJS</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+        </div>
+        <a class="lnk" href="https://campaign.kgs.live/" target="_blank" rel="noopener">Live Site →</a>
+      </div>
+
+      <div class="card">
+        <h3>KGS EdTech Platform</h3>
+        <div class="meta">Khan Global Studies Official Web Platform</div>
+        <ul>
+          <li>Course, test-series, and study-material modules across multiple competitive-exam categories.</li>
+          <li>SSR, static generation, lazy loading, and image optimization for high performance and SEO.</li>
+          <li>Reusable UI for course listings, details, dashboards, forms, tables, and filters.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+        <a class="lnk" href="https://www.khanglobalstudies.com/" target="_blank" rel="noopener">Live Site →</a>
+      </div>
+
+      <div class="card">
+        <h3>Learning &amp; Analytics Dashboard</h3>
+        <div class="meta">Student Learning &amp; Assessment Platform</div>
+        <ul>
+          <li>Authenticated workflows: login, protected routes, user-specific content, role-based access.</li>
+          <li>Reusable components for course dashboards, content navigation, tables, and filters.</li>
+          <li>Analytics dashboard for student performance, answer-writing activity, and learning data.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">Ant Design</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">REST APIs</span>
+        </div>
+        <a class="lnk" href="https://app.khanglobalstudies.com/login" target="_blank" rel="noopener">Live Site →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <p class="sub">Academic background.</p>
+    <div class="card">
+      <div class="row">
+        <h3>B.Tech in Computer Science</h3>
+        <span class="meta">July 2016 – Oct 2020</span>
+      </div>
+      <div class="meta" style="margin-top:6px">Saraswati Institute of Engineering &amp; Technology</div>
+      <div class="tags">
+        <span class="tag">CGPA 6.87/10</span>
+        <span class="tag">First Division</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p class="sub">Open to new opportunities, freelance work, and collaborations.</p>
+    <div class="contact">
+      <!-- Direct CV Download Card in Contact -->
+      <div class="card contact-cv-card">
+        <div>
+          <small style="color:var(--accent);font-weight:700">Curriculum Vitae / Resume</small>
+          <h3 style="margin:4px 0 2px">Download Preet Kumar's CV</h3>
+          <p class="meta" style="margin:0">Updated Resume (PDF) • 3 Years Experience • Full Stack Software Engineer</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn cv-highlight" href="Preet_Kumar_Resume.pdf" download="Preet_Kumar_Resume.pdf" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download PDF
+          </a>
+          <a class="btn" href="Preet_Kumar_Resume.pdf" target="_blank" rel="noopener">
+            View in Browser
+          </a>
+        </div>
+      </div>
+
+      <a class="card" href="mailto:pksiet84@gmail.com">
+        <small>Email</small>
+        <b>pksiet84@gmail.com</b>
+      </a>
+      <a class="card" href="tel:+916397388835">
+        <small>Phone</small>
+        <b>+91 63973 88835</b>
+      </a>
+      <a class="card" href="https://wa.me/916397388835" target="_blank" rel="noopener">
+        <small>WhatsApp</small>
+        <b>+91 63973 88835</b>
+      </a>
+      <a class="card" href="https://www.linkedin.com/in/preet-kumar-1b738523a" target="_blank" rel="noopener">
+        <small>LinkedIn</small>
+        <b>in/preet-kumar-1b738523a</b>
+      </a>
+      <a class="card" href="https://github.com/preetkumar012" target="_blank" rel="noopener">
+        <small>GitHub</small>
+        <b>github.com/preetkumar012</b>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="Preet_Kumar_Resume.pdf" download="Preet_Kumar_Resume.pdf" target="_blank">Download CV</a>
+      <a href="https://github.com/preetkumar012" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/preet-kumar-1b738523a" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div style="margin-top:6px">
+      © 2026 Preet Kumar · Noida, India · All rights reserved.
+    </div>
+  </footer>
+
+</main>
+
+<div id="toast" class="toast">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+  <span id="toastMsg">Portfolio link copied to clipboard!</span>
+</div>
+
+<script>
+// --- 1. Robust Scrollspy / Section Active Highlight ---
+const navLinks = document.querySelectorAll('.links a[href^="#"]');
+const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href').slice(1));
+const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+let isClickScrolling = false;
+
+function highlightNav() {
+  if (isClickScrolling) return;
+
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  const headerOffset = 130;
+
+  // Edge case: User reached very bottom of page
+  if (scrollPosition + windowHeight >= documentHeight - 60) {
+    setActiveLink('contact');
+    return;
+  }
+
+  // Edge case: User is at the top in Hero section
+  if (sections.length > 0 && scrollPosition < sections[0].offsetTop - 200) {
+    clearActiveLinks();
+    return;
+  }
+
+  let currentActiveId = '';
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const sectionTop = section.offsetTop - headerOffset;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentActiveId = section.id;
+      break;
+    }
+  }
+
+  // If between sections or closer to one
+  if (!currentActiveId) {
+    for (let i = sections.length - 1; i >= 0; i--) {
+      if (scrollPosition >= sections[i].offsetTop - headerOffset) {
+        currentActiveId = sections[i].id;
+        break;
+      }
+    }
+  }
+
+  if (currentActiveId) {
+    setActiveLink(currentActiveId);
+  }
+}
+
+function setActiveLink(id) {
+  navLinks.forEach(link => {
+    const match = link.getAttribute('href') === `#${id}`;
+    link.classList.toggle('active', match);
+    if (match) {
+      link.setAttribute('aria-current', 'location');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+function clearActiveLinks() {
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+  });
+}
+
+// Smooth click handler that immediately highlights target
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href').slice(1);
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      isClickScrolling = true;
+      setActiveLink(targetId);
+      setTimeout(() => {
+        isClickScrolling = false;
+        highlightNav();
+      }, 700);
+    }
+  });
+});
+
+window.addEventListener('scroll', highlightNav, { passive: true });
+window.addEventListener('resize', highlightNav);
+document.addEventListener('DOMContentLoaded', highlightNav);
+highlightNav();
+
+// --- 2. Copy Portfolio URL Functionality ---
+function copyPortfolioUrl() {
+  const url = "https://preetkumar012.github.io";
+  navigator.clipboard.writeText(url).then(() => {
+    showToast("Portfolio URL copied! (" + url + ")");
+  }).catch(() => {
+    // Fallback
+    const input = document.createElement('input');
+    input.value = url;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    showToast("Portfolio URL copied: " + url);
+  });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  if (toast && toastMsg) {
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+}
+</script>
+
+</body>
+</html>
